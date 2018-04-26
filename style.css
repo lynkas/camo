@@ -10,6 +10,7 @@ Tags: News
 body{
     margin:0;
     padding: 0;
+    background-color: #fafafa
 }
 
 #header {
@@ -22,6 +23,7 @@ body{
     height: 180px;
     min-height: 10%;
     max-height: 20%;
+    box-shadow: 1px 1px 1px 0 black;
     /*background up, title below*/
 }
 
@@ -78,4 +80,68 @@ body{
  #menu{
         position: absolute;
         z-index: 10;    
+}
+
+#piece #title{
+    font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+
+}
+
+
+#piece #title a{
+    color:black;
+    text-decoration: none;
+}
+#piece #title a:visited{
+    color:#333333;
+}
+#piece #title a:hover{
+    color:#111111;
+}
+#piece #title a:active{
+    color:#222222;
+}
+
+/*bootstrap below*/
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+.row {
+    display: grid;
+    grid-gap: 30px;
+    max-width: 1200px;
+    width:100%;
+    grid: "one two" 200px 
+          / 2fr 1fr;
+    margin: auto;
+        }
+
+.maincontent{
+    width: 100%;
+    max-width: 850px;
+    background-color: fafafa;
+    grid-area: one;
+    float: left;
+    margin: auto;
+
+}
+
+.sidebar{
+    grid-area: two;
+    float: right;
+    width: 100%;
+    max-width: 320px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#piece{
+    border-radius: 5px;
+    background-color: #fff;
+    height: 3em;
 }
