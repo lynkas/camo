@@ -10,7 +10,8 @@ Tags: News
 body{
     margin:0;
     padding: 0;
-    background-color: #fafafa
+    background-color: #fafafa !important;
+    font-family:"Microsoft YaHei", "华文细黑", Helvetica, Tahoma, Arial, STXihei, "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif !important;
 }
 
 #header {
@@ -82,13 +83,9 @@ body{
         z-index: 10;    
 }
 
-#piece #title{
-    font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
-
-}
 
 
-#piece #title a{
+#piece  a{
     color:black;
     text-decoration: none;
 }
@@ -102,8 +99,7 @@ body{
     color:#222222;
 }
 
-/*bootstrap below*/
-.container {
+.contain {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
@@ -111,37 +107,66 @@ body{
     margin-left: auto;
   }
 
-.row {
+.mainbody {
     display: grid;
     grid-gap: 30px;
     max-width: 1200px;
     width:100%;
     grid: "one two" 200px 
           / 2fr 1fr;
-    margin: auto;
+    margin: 0 auto;
         }
 
-.maincontent{
-    width: 100%;
-    max-width: 850px;
-    background-color: fafafa;
-    grid-area: one;
-    float: left;
-    margin: auto;
+#piececontainer{
+    background-color: #fafafa;
+    margin: auto 20px;
 
 }
 
-.sidebar{
-    grid-area: two;
-    float: right;
-    width: 100%;
-    max-width: 320px;
+#sidebar{
     background-color: #fff;
     border-radius: 10px;
+    margin-top: 15px;
 }
 
 #piece{
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #fff;
-    height: 3em;
+    height: 200px;
+    margin-top:10px;
+    position: relative;
+
+
+}
+
+#piece #title{
+    
+    margin-top: 15px;
+    padding-left: 20px;
+    padding-top: 10px;
+
+}
+
+#piece #content{
+    padding-left: 20px;
+    padding-right: 20px;    
+    font-size: 20px;
+}
+
+#piece #content #abstract{
+    color: rgb(48, 48, 48);
+    font-size: 15px
+
+}
+
+.container{
+    max-width: 1400px !important;
+}
+
+
+
+#piece #content #info{
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
 }
