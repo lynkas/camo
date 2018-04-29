@@ -6,17 +6,18 @@
     <title><?php bloginfo('name')?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo( 'stylesheet_url' );  ?>" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="./bootstrap.min.css" > -->
+    <!-- <script src="./bootstrap.min.js"></script> -->
     <script src="main.js"></script>
     <?php wp_head(); ?>
 
 </head>
 <body>
+
     <?php get_header();?>
 <div class="container" style="background-color:#fafafa">
 <div class="row" >
-<div class="col-8">
+<div id="articles" class="col-8">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <div id="piece">
@@ -28,20 +29,25 @@
 
         <p id="abstract">
             <?php
-                echo wp_trim_words( get_the_content(), 80,"... <a href=\"". get_permalink( ) . "\"><span class=\"badge badge-secondary\">阅读全文</span></a>" );
+                echo wp_trim_words( get_the_content(), 80,"... <a href=\"". get_permalink( ) . "\"><span id=\"readmore\" class=\"badge badge-secondary\">阅读全文</span></a>" );
             ?>
             
             <br />
             <div id="info">
-            <span style="font-size:15px">作者</span> <b><?php the_author( ) ?></b> 
-            <span style="font-size:15px">日期</span> <b><?php echo the_date( "Y/m/d" );  ?></b>
-            
+            <span id="date"><?php echo the_date( "Y/m/d" );  ?></span>
+            <span id="head">作者</span> <span id="author"><?php the_author( ) ?></span> 
+
+            <span style="font-size:15px"><?php edit_post_link("Edit"); ?> </span>
             </div>
         </p>
         
     </div>
 </div>
-<?php endwhile; else: ?>
+<?php endwhile; ?>
+<div class=”navigation”>
+<?php posts_nav_link(); ?>
+</div>
+<?php else: ?>
 <p>Sorry, no posts matched your criteria.</p>
 <?php endif; ?>
 

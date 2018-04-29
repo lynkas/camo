@@ -7,6 +7,8 @@ Version: 0.0.1
 Tags: News
 */
 
+@import "./bootstrap.min.css";
+
 body{
     margin:0;
     padding: 0;
@@ -83,22 +85,6 @@ body{
         z-index: 10;    
 }
 
-
-
-#piece  a{
-    color:black;
-    text-decoration: none;
-}
-#piece #title a:visited{
-    color:#333333;
-}
-#piece #title a:hover{
-    color:#111111;
-}
-#piece #title a:active{
-    color:#222222;
-}
-
 .contain {
     width: 100%;
     padding-right: 15px;
@@ -143,7 +129,7 @@ body{
     
     margin-top: 15px;
     padding-left: 20px;
-    padding-top: 10px;
+    padding-top: 20px;
 
 }
 
@@ -151,6 +137,7 @@ body{
     padding-left: 20px;
     padding-right: 20px;    
     font-size: 20px;
+    margin-top: 20px
 }
 
 #piece #content #abstract{
@@ -169,4 +156,43 @@ body{
     position: absolute;
     bottom: 10px;
     left: 30px;
+}
+
+#title h2{
+    font-size: 25px;
+}
+
+#title a{
+    color:#555555;
+}
+
+#title a:hover{
+    color: #222222;
+    text-decoration: none;
+
+}
+#title a:active{
+    color: #999999;
+    text-decoration: none;
+
+}
+
+#piece:hover{
+    box-shadow: 0px 0px 5px 2px gray;
+
+}
+
+#info #head{
+    font-size: 15px;
+    color:#696969
+}
+
+#info #author{
+    font-size: 15px;
+    color: #333333
+}
+
+#info #date{
+    font-size: 15px;
+    color: #333333
 }
