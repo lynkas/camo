@@ -53,13 +53,40 @@
 
 </div>
 <div id="sidebar" class="col-4">
-    <div>
-        <h2>
-        <?php _e('Categories');?>
-        </h2>
+<div>
+<?php get_search_form(  ) ?>
+</div>
+
         <ul>
-<?php wp_list_categories(); ?>
+
+        <?php     $defaults = array(
+        'child_of'            => 0,
+        'current_category'    => 0,
+        'depth'               => 0,
+        'echo'                => 1,
+        'exclude'             => '',
+        'exclude_tree'        => '',
+        'feed'                => '',
+        'feed_image'          => '',
+        'feed_type'           => '',
+        'hide_empty'          => 1,
+        'hide_title_if_empty' => false,
+        'hierarchical'        => true,
+        'order'               => 'ASC',
+        'orderby'             => 'name',
+        'separator'           => ' ',
+        'show_count'          => 0,
+        'show_option_all'     => '',
+        'show_option_none'    => __( 'No categories' ),
+        'style'               => 'list',
+        'taxonomy'            => 'category',
+        'title_li'            => __( 'Categories' ),
+        'use_desc_for_title'  => 1,
+    ); ?>
+
+<aside class="tags"><?php wp_tag_cloud($defaults); ?></aside>
 </ul>
+<?php get_links_list(  ) ?>
     </div>
     
 </div>
