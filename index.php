@@ -44,7 +44,7 @@
     </div>
 </div>
 <?php endwhile; ?>
-<div class=”navigation”>
+<div id="mvpage">
 <?php posts_nav_link(); ?>
 </div>
 <?php else: ?>
@@ -53,6 +53,14 @@
 
 </div>
 <div id="sidebar" class="col-4">
+    <div>
+        <h2>
+        <?php _e('Categories');?>
+        </h2>
+        <ul>
+<?php wp_list_categories(); ?>
+</ul>
+    </div>
     
 </div>
 </div>
